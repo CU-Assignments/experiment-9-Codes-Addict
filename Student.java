@@ -1,14 +1,16 @@
+package com.example;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "student")
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String name;
-    private Course course;
+    private int age;
 
-    public Student(String name, Course course) {
-        this.name = name;
-        this.course = course;
-    }
-
-    public void displayInfo() {
-        System.out.println("Student: " + name);
-        System.out.println(course);
-    }
+    // Getters and Setters
 }
